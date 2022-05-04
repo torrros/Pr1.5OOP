@@ -1,3 +1,4 @@
+
 #include "Pair.h"
 #include <iostream>
 #include <string>
@@ -13,41 +14,34 @@ void Pair::init(int a, int b)
 void Pair::display(Pair& m1, Pair& m2)
 {
 	cout << " Subtraction" << endl;
-	cout << " (" << m1.a << "," << m2.a << ") - (" << m1.b << "," << m2.b << ") = ";
-	cout << "(" << m1.a << " - " << m1.b << " , " << m2.a << " - " << m2.b << ")" << " = ";
-	cout << "(" << tostring(sub(m1.a, m1.b)) << " | " << tostring(Sub(m2)) << ")" << endl;
+	cout << " " << (tostring(sub(m1, m1))) << "|" << (tostring(sub(m2, m2))) << endl;
+	cout << " Multiply" << endl;
+	cout << " " <<(tostring( multiply(m1, m1))) << "|" <<(tostring(multiply(m2, m2))) << endl;
+	cout << " Equal" << endl;
+	cout << " " << (tostring(equal(m1, m2))) << "|" << (tostring(equal(m2, m1)))  << " (0-not equal|1-equal) " << endl;
 
-	cout << " Multiply  " << endl;
-	cout << " (" << m1.a << "," << m2.a << ") * (" << m1.b << "," << m2.b << ") = ";
-	cout << "(" << m1.a << " * " << m1.b << " , " << m2.a << " * " << m2.b << ")" << " = ";
-	cout << "( " << tostring(multiply(m1, m2)) << " | " << tostring(Multiply(m1, m2)) << " )" << endl;
-	cout << " Equal " << endl;
-	cout <<" "<< m1.a << "," << m1.b << " == " << m2.a << "," << m2.b << " - " << tostring(equal(m1, m2)) << endl;
-	
 }
 
 void Pair::read(Pair& m1, Pair& m2)
 {
-	
+
 	cout << " a = "; cin >> m1.a;
 	cout << " b = "; cin >> m2.a;
 	init(m1.a, m2.a);
 
 	cout << " c = "; cin >> m1.b;
 	cout << " d = "; cin >> m2.b;
-	init (m1.b, m2.b);
+	init(m1.b, m2.b);
 
 }
 
-int Pair::multiply(Pair& m1, Pair& m2)
+int Pair::multiply(Pair& m1, Pair m2)
 {
-	return m1.a * m1.b;
+	return m1.geta() * m1.getb();
+	return m2.geta()* m2.getb();
 }
 
-int Pair::Multiply(Pair& m1, Pair& m2)
-{
-	return m2.a * m2.b;
-}
+
 
 bool Pair::equal(Pair& m1, Pair& m2)
 {
@@ -66,12 +60,10 @@ string Pair::tostring(int value)const
 	return str;
 }
 
-int Pair ::sub(int a, int b)
+int Pair::sub(Pair& m1,Pair m2)
 {
-	return a - b;
+	return m1.geta() - m1.getb(),m2.geta() - m2.getb();
 }
 
-int Pair ::Sub(Pair& m2)
-{
-	return m2.a - m2.b;
-}
+
+

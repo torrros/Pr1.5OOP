@@ -14,5 +14,5 @@ int main()
 	p.read(h1, h2);
 	r.display(h1, h2);
 	p.display(h1, h2);
-	return 0; 
+	return 0;
 }
