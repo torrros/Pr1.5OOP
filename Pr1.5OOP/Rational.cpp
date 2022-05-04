@@ -46,6 +46,6 @@ int Rational::div(Pair& m1, Pair& m2)
 
 int Rational::sub(Pair& m1, Pair& m2)
 {
-	return m1.geta() - m1.getb(), m2.geta() - m2.getb(), m1.getb()*m2.getb();
+	return m1.geta() - m1.getb(), m2.geta() - m2.getb();
 }
 
